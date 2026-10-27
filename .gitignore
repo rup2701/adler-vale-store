@@ -2,3 +2,7 @@ node_modules
 .next
 .env
 .uploads
+test-results
+playwright-report
+next-env.d.ts
+*.tsbuildinfo
