@@ -16,7 +16,8 @@ export function LoginForm() {
       )}
       <div>
         <Label htmlFor="email">Email</Label>
-        <Input id="email" name="email" type="email" autoComplete="username" required />
+        {/* keyed so the email stays after a failed attempt (React clears uncontrolled fields after a form action) */}
+        <Input key={state.email ?? ""} id="email" name="email" type="email" autoComplete="username" defaultValue={state.email ?? ""} required />
       </div>
       <div>
         <Label htmlFor="password">Password</Label>

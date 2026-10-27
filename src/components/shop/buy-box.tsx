@@ -324,9 +324,7 @@ export function BuyBox({ product, options, stores }: { product: BuyProduct; opti
                 <span className={soldOutEntirely ? "text-muted-foreground" : "text-foreground"}>
                   {soldOutEntirely
                     ? "Not available for pickup"
-                    : missingTracked
-                      ? "Choose a size to confirm"
-                      : `Available for pickup${st.pickupReady ? `. ${st.pickupReady}` : ""}`}
+                    : `${missingTracked ? "Choose a size to confirm" : "Available for pickup"}${st.pickupReady ? `. ${st.pickupReady}` : ""}`}
                 </span>
               </li>
             ))}

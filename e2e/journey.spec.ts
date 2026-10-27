@@ -2,7 +2,6 @@ import { test, expect, fillCheckout, orderCount, pool, cleanup } from "./helpers
 
 test.afterAll(async () => {
   await cleanup();
-  await pool.end();
 });
 
 test("discover-and-purchase journey: home → catalog → product → cart → checkout → confirmation", async ({ page }) => {
