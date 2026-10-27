@@ -1,0 +1,199 @@
+{
+  "schema_version": "1.0",
+  "purpose": "Brief for a fictional designer boutique, used to test how far the runner gets when the brief asks for more than the specs describe.",
+  "store": {
+    "name": "Alder & Vale",
+    "sells": "Women's designer clothing and accessories from a curated set of brands",
+    "town": "Los Gatos, California",
+    "online_only": false,
+    "brand_words": [
+      "curated",
+      "polished",
+      "personal"
+    ],
+    "stores": [
+      {
+        "name": "Los Gatos",
+        "address": "Sample address, Los Gatos, CA",
+        "phone": "555-0100",
+        "pickup": true,
+        "pickup_ready": "Usually ready in 4 hours"
+      },
+      {
+        "name": "Santa Barbara",
+        "address": "Sample address, Montecito, CA",
+        "phone": "555-0101",
+        "pickup": true,
+        "pickup_ready": "Usually ready the next day",
+        "note": "New location"
+      }
+    ]
+  },
+  "categories": [
+    "Dresses",
+    "Tops",
+    "Skirts",
+    "Shoes",
+    "Bags",
+    "Jewelry",
+    "Accessories",
+    "Sale"
+  ],
+  "sample_catalog": {
+    "mode": "generate_sample",
+    "count": 24,
+    "rules": [
+      "Products are samples, labeled as samples in the owner area. Use only the fictional brands listed above.",
+      "Each product has a brand, a category, and belongs to one or more collections.",
+      "Clothing has sizes (0, 2, 4, 6, 8, 10) and each size has its own stock. At least four products have one or more sizes sold out.",
+      "At least two products are sold out in every size.",
+      "Prices between $90 and $1,400, one-of-a-kind items allowed.",
+      "Every product has a short description, a Materials & care list and a Specifications list."
+    ]
+  },
+  "imagery": {
+    "source": "owner_uploads",
+    "rules": [
+      "No stock or generated photos are fetched or invented.",
+      "Products and the hero start without photos and show a neutral placeholder.",
+      "The owner adds photos, including the hero banner, through the owner area."
+    ]
+  },
+  "look": {
+    "style": "editorial",
+    "tone": "polished",
+    "accent": null,
+    "accent_note": "Choose a restrained accent that suits a fashion boutique and record it.",
+    "layout": {
+      "width": "full",
+      "product_cards": "image-first",
+      "reading_pages": "narrow column"
+    },
+    "header": {
+      "announcement_bar": {
+        "enabled": true,
+        "messages": [
+          "New location: Santa Barbara",
+          "Take 10% off sale items with code SAMPLE10"
+        ],
+        "owner_editable": true
+      },
+      "logo": "centered, text wordmark until the owner uploads one",
+      "left": "Women / Men switch (Women is the default; Men may be empty)",
+      "right": "search, bag with item count",
+      "menu": "centered, uppercase, shows the categories plus 'Designers' (the brands page) and 'Sale'",
+      "mobile": "menu collapses behind a button"
+    },
+    "home": {
+      "sections_in_order": [
+        "Hero banner: owner-uploaded image, headline, one button",
+        "Brands strip: the brands carried, each linking to that brand's page",
+        "Collection sections: one per collection marked show_on_home, with title, description and the first products",
+        "Email signup strip: one email field and a button; store the address and show a thank-you message; send nothing",
+        "Footer"
+      ],
+      "owner_editable": [
+        "hero image, headline and button",
+        "announcement messages",
+        "which collections show on home and their order"
+      ]
+    },
+    "footer": {
+      "columns": [
+        "Customer Service (Help & FAQ, Returns & refunds, Contact us)",
+        "Stores & Contact (each store's address and phone)",
+        "Explore (About us, Gift cards, Shop all)"
+      ]
+    },
+    "product_page": {
+      "sections_in_order": [
+        "Images",
+        "Brand, name, price",
+        "Color and size (sold-out sizes are shown struck through and cannot be chosen)",
+        "Quantity and Add to cart",
+        "Pickup availability (per store)",
+        "Description",
+        "Materials & care",
+        "Specifications",
+        "You may also like"
+      ]
+    }
+  },
+  "orders": {
+    "fulfilment": "ship_or_pickup",
+    "currency": "USD",
+    "shipping": {
+      "mode": "demo_flat_rate",
+      "flat_cents": 1500,
+      "free_over_cents": 50000,
+      "label": "Always labeled as an estimate"
+    },
+    "tax": "estimated, labeled as an estimate",
+    "max_quantity_per_line": 10,
+    "countries": [
+      "United States"
+    ],
+    "order_reference": "A short, unique, human-readable code shown on the confirmation page. No lookup page and no email in this version.",
+    "pickup": {
+      "enabled": true,
+      "at_checkout": "A choice between Ship and Pickup; Pickup lets the shopper choose a store and shows its ready time. No shipping charge for pickup."
+    }
+  },
+  "policies": {
+    "returns_window_days": 30,
+    "note": "Sample wording until the owner confirms their own."
+  },
+  "owner": {
+    "sign_in": "One owner, from environment configuration. The email and password hash are supplied when the store is deployed.",
+    "areas": [
+      "products with brand, categories, collections and per-size stock",
+      "brands",
+      "collections",
+      "stores and pickup",
+      "announcement bar",
+      "home page (hero, which collections)",
+      "email signups list"
+    ]
+  },
+  "storage": {
+    "database": "Postgres (Neon when deployed)",
+    "photos": "A storage adapter: local disk for development, Vercel Blob when deployed"
+  },
+  "stack": "See the Builder's knowledge/stack.json. Those decisions are fixed.",
+  "brands": [
+    "Marlowe",
+    "Ines Vega",
+    "Hollis Grey",
+    "Atelier Noor",
+    "Fenwick"
+  ],
+  "collections": {
+    "note": "Collections group products across categories and appear as sections on the home page. A product can be in several.",
+    "items": [
+      {
+        "name": "New Arrivals",
+        "description": "The newest pieces for the season.",
+        "show_on_home": true
+      },
+      {
+        "name": "Occasion Dressing",
+        "description": "Dresses and finishing touches for celebrations.",
+        "show_on_home": true
+      },
+      {
+        "name": "Best Sellers",
+        "description": "What our customers keep coming back for.",
+        "show_on_home": true
+      }
+    ]
+  },
+  "not_in_this_version": [
+    "Shopper accounts, login, 'Your orders' and wishlist",
+    "Real payments",
+    "Sending email"
+  ],
+  "assumptions": [
+    "All brand names, addresses and phone numbers are fictional samples.",
+    "The Women/Men switch only filters by a field on each product."
+  ]
+}
